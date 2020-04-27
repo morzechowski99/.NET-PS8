@@ -1,0 +1,32 @@
+﻿@page
+@model PS8.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row col-sm-12">
+    <a asp-page="/Index"><button class="btn btn-primary btn-large">Powrót</button></a>
+</div>
+<h2>Szczegóły: @Model.product.name</h2>
+<div class="pt-4">
+    <table class="table table-striped">
+
+        <tbody>
+
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(m => Model.product.id)</th>
+                <td>@Html.DisplayFor(m => Model.product.id)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(m => Model.product.name)</th>
+                <td>@Html.DisplayFor(m => Model.product.name)</td>
+            </tr>
+            <tr>
+                <th scope="row">@Html.DisplayNameFor(m => Model.product.price)</th>
+                <td>@Html.DisplayFor(m => Model.product.price)</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
