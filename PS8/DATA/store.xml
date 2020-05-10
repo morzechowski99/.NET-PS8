@@ -1,19 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <store>
-  <product id="1">
-    <name>Narty aaa</name>
-    <price>26,30</price>
-  </product>
-  <product id="2">
-    <name>234234</name>
-    <price>24332</price>
-  </product>
-  <product id="3">
-    <name>Takamine</name>
-    <price>1999,99</price>
-  </product>
-  <product id="4">
+  <product id="0">
     <name>Rower</name>
-    <price>1</price>
+    <price>1999,99</price>
   </product>
 </store>

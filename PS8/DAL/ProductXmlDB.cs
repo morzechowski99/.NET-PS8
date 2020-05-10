@@ -90,6 +90,7 @@ namespace PS8.DAL
         private int GetNextID()
         {
             List<Product> products = List();
+            if (products.Count == 0) return 0;
             return products[products.Count - 1].id + 1;
         }
     }

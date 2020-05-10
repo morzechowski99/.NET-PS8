@@ -35,8 +35,11 @@ namespace PS8.Pages
         }
         public IActionResult OnPostDelete()
         {
-            productDB.Delete(id);
-
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                productDB.Delete(id);
+            }
+            
             return RedirectToPage("Index");
         }
     }
