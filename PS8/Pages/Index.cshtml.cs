@@ -16,31 +16,30 @@ namespace PS8.Pages
         public List<Product> productList = new List<Product>();
         [BindProperty]
         public int id { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string message { get; set; }
         IProductDB productDB;
         public IndexModel(IProductDB _productDB)
         {
             productDB = _productDB;
+            
         }
         public void OnGet()
         {
             productList = productDB.List();
+            
         }
-        private Product XmlNode2Product(XmlNode node)
-        {
-            Product p = new Product();
-            p.id = int.Parse(node.Attributes["id"].Value);
-            p.name = node["name"].InnerText;
-            p.price = decimal.Parse(node["price"].InnerText);
-            return p;
-        }
+        
         public IActionResult OnPostDelete()
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 productDB.Delete(id);
+                productList = productDB.List();
+                return Page();
             }
             
-            return RedirectToPage("Index");
+            return RedirectToPage("Index",new { message = "Musisz sie zalogowac" });
         }
     }
 }

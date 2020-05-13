@@ -31,7 +31,8 @@ else{
                 <span asp-validation-for="user.password" class="text-danger"></span>
             </div>
         </div>
-        <div class="form-group">
+        <div style="height:20px"class="text-danger font-weight-bold">@Model.message</div>
+        <div class="form-group mt-2">
             <div class="col-sm-offset-2 col-sm-10">
                 <button class="btn btn btn-primary">Zatwierdź</button>
             </div>

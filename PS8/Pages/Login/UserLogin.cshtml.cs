@@ -19,6 +19,8 @@ namespace PS8.Pages.Login
         
         [BindProperty]
         public User user { get; set; }
+        [BindProperty(SupportsGet =true)]
+        public string message { get; set; }
         IUserDB _userDB;
         public UserLoginModel(IUserDB userDB)
         {
@@ -56,6 +58,7 @@ namespace PS8.Pages.Login
                     return Redirect(returnUrl);
                 }
             }
+            message = "Podano błędny login lub hasło";
             return Page();
         }
     }

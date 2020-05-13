@@ -8,8 +8,10 @@
 <div class="row col-sm-12">
     <a asp-page="Add" class="btn btn-primary btn-large">Dodaj</a>
 </div>
-<br />
-<br />
+
+<div style="height:20px" class="text-danger font-weight-bold mb-2 mt-2">
+    @Model.message
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
